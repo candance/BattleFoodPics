@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--InitialVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="BFPInitialVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,74 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Battle Food Porn!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PH8-yr-3lN">
+                                <rect key="frame" x="167" y="220" width="266" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffT-vU-Q5L">
+                                <rect key="frame" x="251" y="364" width="99" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Click to Play!"/>
+                                <connections>
+                                    <action selector="startGameButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I6J-fM-g5D"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PH8-yr-3lN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5hW-J8-6hB"/>
+                            <constraint firstItem="ffT-vU-Q5L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G7t-u2-UiD"/>
+                            <constraint firstItem="ffT-vU-Q5L" firstAttribute="top" secondItem="PH8-yr-3lN" secondAttribute="bottom" constant="120" id="vbH-Cr-k8r"/>
+                            <constraint firstItem="PH8-yr-3lN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="200" id="wK8-Qz-yW9"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="startGameButton" destination="ffT-vU-Q5L" id="sMI-NB-ppo"/>
+                        <segue destination="VY4-o5-Ipa" kind="show" identifier="Start Game" id="YxX-kd-VHZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="357" y="276"/>
+        </scene>
+        <!--GameVC-->
+        <scene sceneID="O1l-iu-7P8">
+            <objects>
+                <viewController id="VY4-o5-Ipa" customClass="BFPGameVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g10-sg-4Z9"/>
+                        <viewControllerLayoutGuide type="bottom" id="QFw-yN-07H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8QT-zu-a9M">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pih-1U-8m0" customClass="BFPDraggableViewBackground">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QTB-pG-od4">
+                                        <rect key="frame" x="180" y="127" width="237" height="260"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.81663073050000001" blue="0.90696414410000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pih-1U-8m0" firstAttribute="leading" secondItem="8QT-zu-a9M" secondAttribute="leading" id="MFz-TN-cBX"/>
+                            <constraint firstItem="Pih-1U-8m0" firstAttribute="top" secondItem="g10-sg-4Z9" secondAttribute="bottom" constant="-20" id="q4f-to-z4O"/>
+                            <constraint firstItem="QFw-yN-07H" firstAttribute="top" secondItem="Pih-1U-8m0" secondAttribute="bottom" id="qsg-Jj-RRh"/>
+                            <constraint firstAttribute="trailing" secondItem="Pih-1U-8m0" secondAttribute="trailing" id="rUu-ju-TWN"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mNY-iq-Hfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1081" y="276"/>
         </scene>
     </scenes>
 </document>

@@ -9,10 +9,15 @@
 /* Begin PBXBuildFile section */
 		0D45A2E51D3D7C490006051D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D45A2E41D3D7C490006051D /* main.m */; };
 		0D45A2E81D3D7C490006051D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D45A2E71D3D7C490006051D /* AppDelegate.m */; };
-		0D45A2EB1D3D7C490006051D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D45A2EA1D3D7C490006051D /* ViewController.m */; };
 		0D45A2EE1D3D7C490006051D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D45A2EC1D3D7C490006051D /* Main.storyboard */; };
 		0D45A2F01D3D7C490006051D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D45A2EF1D3D7C490006051D /* Assets.xcassets */; };
 		0D45A2F31D3D7C490006051D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D45A2F11D3D7C490006051D /* LaunchScreen.storyboard */; };
+		0D45A2FC1D3D7F850006051D /* BFPInitialVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D45A2FB1D3D7F850006051D /* BFPInitialVC.m */; };
+		0D45A2FF1D3D819A0006051D /* BFPGameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D45A2FE1D3D819A0006051D /* BFPGameVC.m */; };
+		0D45A3021D3D994B0006051D /* BFPDraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D45A3011D3D994B0006051D /* BFPDraggableView.m */; };
+		0D45A3051D3D9F120006051D /* BFPOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D45A3041D3D9F120006051D /* BFPOverlayView.m */; };
+		0D45A3081D3DA2D90006051D /* BFPDraggableViewBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D45A3071D3DA2D90006051D /* BFPDraggableViewBackground.m */; };
+		DB8C3C5D7DD5575A71827A32 /* libPods-BattleFoodPorn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A14FA7E5D55AD74429472D /* libPods-BattleFoodPorn.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +25,23 @@
 		0D45A2E41D3D7C490006051D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0D45A2E61D3D7C490006051D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0D45A2E71D3D7C490006051D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0D45A2E91D3D7C490006051D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0D45A2EA1D3D7C490006051D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0D45A2ED1D3D7C490006051D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D45A2EF1D3D7C490006051D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D45A2F21D3D7C490006051D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D45A2F41D3D7C490006051D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D45A2FA1D3D7F850006051D /* BFPInitialVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFPInitialVC.h; sourceTree = "<group>"; };
+		0D45A2FB1D3D7F850006051D /* BFPInitialVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFPInitialVC.m; sourceTree = "<group>"; };
+		0D45A2FD1D3D819A0006051D /* BFPGameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFPGameVC.h; sourceTree = "<group>"; };
+		0D45A2FE1D3D819A0006051D /* BFPGameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFPGameVC.m; sourceTree = "<group>"; };
+		0D45A3001D3D994B0006051D /* BFPDraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFPDraggableView.h; sourceTree = "<group>"; };
+		0D45A3011D3D994B0006051D /* BFPDraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFPDraggableView.m; sourceTree = "<group>"; };
+		0D45A3031D3D9F120006051D /* BFPOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFPOverlayView.h; sourceTree = "<group>"; };
+		0D45A3041D3D9F120006051D /* BFPOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFPOverlayView.m; sourceTree = "<group>"; };
+		0D45A3061D3DA2D90006051D /* BFPDraggableViewBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFPDraggableViewBackground.h; sourceTree = "<group>"; };
+		0D45A3071D3DA2D90006051D /* BFPDraggableViewBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFPDraggableViewBackground.m; sourceTree = "<group>"; };
+		0F3F94AE5BCDA0A63B3A8C8B /* Pods-BattleFoodPorn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BattleFoodPorn.release.xcconfig"; path = "Pods/Target Support Files/Pods-BattleFoodPorn/Pods-BattleFoodPorn.release.xcconfig"; sourceTree = "<group>"; };
+		39A14FA7E5D55AD74429472D /* libPods-BattleFoodPorn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BattleFoodPorn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4864F6A1A6E42850EE1A67D8 /* Pods-BattleFoodPorn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BattleFoodPorn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BattleFoodPorn/Pods-BattleFoodPorn.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB8C3C5D7DD5575A71827A32 /* libPods-BattleFoodPorn.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +61,8 @@
 			children = (
 				0D45A2E21D3D7C490006051D /* BattleFoodPorn */,
 				0D45A2E11D3D7C490006051D /* Products */,
+				BB0F91DD782B720CE63A51CB /* Pods */,
+				D1610E809B7EFFDBB791BF33 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,14 +77,12 @@
 		0D45A2E21D3D7C490006051D /* BattleFoodPorn */ = {
 			isa = PBXGroup;
 			children = (
-				0D45A2E61D3D7C490006051D /* AppDelegate.h */,
-				0D45A2E71D3D7C490006051D /* AppDelegate.m */,
-				0D45A2E91D3D7C490006051D /* ViewController.h */,
-				0D45A2EA1D3D7C490006051D /* ViewController.m */,
 				0D45A2EC1D3D7C490006051D /* Main.storyboard */,
-				0D45A2EF1D3D7C490006051D /* Assets.xcassets */,
-				0D45A2F11D3D7C490006051D /* LaunchScreen.storyboard */,
-				0D45A2F41D3D7C490006051D /* Info.plist */,
+				0D45A2FD1D3D819A0006051D /* BFPGameVC.h */,
+				0D45A2FE1D3D819A0006051D /* BFPGameVC.m */,
+				0D45A3091D3DA34E0006051D /* Game Draggable View */,
+				0D45A2FA1D3D7F850006051D /* BFPInitialVC.h */,
+				0D45A2FB1D3D7F850006051D /* BFPInitialVC.m */,
 				0D45A2E31D3D7C490006051D /* Supporting Files */,
 			);
 			path = BattleFoodPorn;
@@ -74,9 +91,44 @@
 		0D45A2E31D3D7C490006051D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0D45A2F11D3D7C490006051D /* LaunchScreen.storyboard */,
+				0D45A2E61D3D7C490006051D /* AppDelegate.h */,
+				0D45A2E71D3D7C490006051D /* AppDelegate.m */,
 				0D45A2E41D3D7C490006051D /* main.m */,
+				0D45A2F41D3D7C490006051D /* Info.plist */,
+				0D45A2EF1D3D7C490006051D /* Assets.xcassets */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0D45A3091D3DA34E0006051D /* Game Draggable View */ = {
+			isa = PBXGroup;
+			children = (
+				0D45A3061D3DA2D90006051D /* BFPDraggableViewBackground.h */,
+				0D45A3071D3DA2D90006051D /* BFPDraggableViewBackground.m */,
+				0D45A3001D3D994B0006051D /* BFPDraggableView.h */,
+				0D45A3011D3D994B0006051D /* BFPDraggableView.m */,
+				0D45A3031D3D9F120006051D /* BFPOverlayView.h */,
+				0D45A3041D3D9F120006051D /* BFPOverlayView.m */,
+			);
+			name = "Game Draggable View";
+			sourceTree = "<group>";
+		};
+		BB0F91DD782B720CE63A51CB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4864F6A1A6E42850EE1A67D8 /* Pods-BattleFoodPorn.debug.xcconfig */,
+				0F3F94AE5BCDA0A63B3A8C8B /* Pods-BattleFoodPorn.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D1610E809B7EFFDBB791BF33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39A14FA7E5D55AD74429472D /* libPods-BattleFoodPorn.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,9 +138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D45A2F71D3D7C490006051D /* Build configuration list for PBXNativeTarget "BattleFoodPorn" */;
 			buildPhases = (
+				F96DD2BCB1B60A1047EF4A22 /* [CP] Check Pods Manifest.lock */,
 				0D45A2DC1D3D7C490006051D /* Sources */,
 				0D45A2DD1D3D7C490006051D /* Frameworks */,
 				0D45A2DE1D3D7C490006051D /* Resources */,
+				7C6798F2A8B95153C8881044 /* [CP] Embed Pods Frameworks */,
+				87AE402FFC17D4BCD11FEFDD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,13 +199,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7C6798F2A8B95153C8881044 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BattleFoodPorn/Pods-BattleFoodPorn-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87AE402FFC17D4BCD11FEFDD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BattleFoodPorn/Pods-BattleFoodPorn-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F96DD2BCB1B60A1047EF4A22 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0D45A2DC1D3D7C490006051D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D45A2EB1D3D7C490006051D /* ViewController.m in Sources */,
+				0D45A2FC1D3D7F850006051D /* BFPInitialVC.m in Sources */,
+				0D45A2FF1D3D819A0006051D /* BFPGameVC.m in Sources */,
+				0D45A3081D3DA2D90006051D /* BFPDraggableViewBackground.m in Sources */,
+				0D45A3021D3D994B0006051D /* BFPDraggableView.m in Sources */,
 				0D45A2E81D3D7C490006051D /* AppDelegate.m in Sources */,
+				0D45A3051D3D9F120006051D /* BFPOverlayView.m in Sources */,
 				0D45A2E51D3D7C490006051D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +370,7 @@
 		};
 		0D45A2F81D3D7C490006051D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4864F6A1A6E42850EE1A67D8 /* Pods-BattleFoodPorn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BattleFoodPorn/Info.plist;
@@ -274,6 +382,7 @@
 		};
 		0D45A2F91D3D7C490006051D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F3F94AE5BCDA0A63B3A8C8B /* Pods-BattleFoodPorn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BattleFoodPorn/Info.plist;
@@ -302,6 +411,7 @@
 				0D45A2F91D3D7C490006051D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
