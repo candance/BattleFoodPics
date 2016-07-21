@@ -34,15 +34,17 @@
 #import <UIKit/UIKit.h>
 #import "BFPDraggableView.h"
 #import "BFPGameVC.h"
+#import "BFPGameCard.h"
 
 @interface BFPDraggableViewBackground : UIView <DraggableViewDelegate>
 
 //methods called in DraggableView
 - (void)cardSwipedLeft:(UIView *)card;
 - (void)cardSwipedRight:(UIView *)card;
+- (void)loadCards;
 
-@property (retain,nonatomic) NSArray* gameCardPhotos; //%%% the labels the cards
-@property (retain,nonatomic) NSMutableArray* allCards; //%%% the labels the cards
+@property (retain,nonatomic) NSArray<BFPGameCard *> *gameCards;
+@property (retain,nonatomic) NSMutableArray* allCards;
 
 
 @end

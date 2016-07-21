@@ -7,14 +7,10 @@
 //
 
 #import "BFPDraggableViewBackground.h"
-#import "BFPGameVC.h"
 
 @interface BFPDraggableViewBackground ()
 
-@property (strong, nonatomic) BFPGameVC *gameVC;
-
 @end
-
 
 @implementation BFPDraggableViewBackground {
     
@@ -32,25 +28,10 @@ static const int MAX_BUFFER_SIZE = 2; //%%% max number of cards loaded at any gi
 static const float CARD_HEIGHT = 386; //%%% height of the draggable card
 static const float CARD_WIDTH = 290; //%%% width of the draggable card
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        [super layoutSubviews];
-//        [self setupView];
-        loadedCards = [[NSMutableArray alloc] init];
-        self.allCards = [[NSMutableArray alloc] init];
-        cardsLoadedIndex = 0;
-        [self loadCards];
-    }
-    return self;
-}
-
 //%%% sets up the extra buttons on the screen
 -(void)setupView
 {
 #warning customize all of this.  These are just place holders to make it look pretty
-//    self.backgroundColor = [UIColor colorWithRed:.93 green:.00 blue:1.00 alpha:1]; // purple
 //    menuButton = [[UIButton alloc]initWithFrame:CGRectMake(17, 34, 22, 15)];
 //    [menuButton setImage:[UIImage imageNamed:@"shitty"] forState:UIControlStateNormal];
 ////    messageButton = [[UIButton alloc]initWithFrame:CGRectMake(284, 34, 18, 18)];
@@ -67,28 +48,31 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 //    [self addSubview:foodPornButton];
 }
 
-#warning include own card customization here!
-//%%% creates a card and returns it.  This should be customized to fit your needs.
-// use "index" to indicate where the information should be pulled.  If this doesn't apply to you, feel free
-// to get rid of it (eg: if you are building cards from data from the internet)
+//%%% creates a card and returns it.
 -(BFPDraggableView *)createDraggableViewWithDataAtIndex:(NSInteger)index {
     
     BFPDraggableView *draggableView = [[BFPDraggableView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT)];
-    draggableView.cardImageView.image = [self.gameCardPhotos objectAtIndex:index];
+    
+    draggableView.cardImageView.contentMode = UIViewContentModeScaleAspectFit;
+    draggableView.cardImageView.image = [self.gameCards objectAtIndex:index].image;
     draggableView.delegate = self;
     return draggableView;
-    
 }
 
 //%%% loads all the cards and puts the first x in the "loaded cards" array
 -(void)loadCards {
     
-    if([self.gameCardPhotos count] > 0) {
-        NSInteger numLoadedCardsCap =(([self.gameCardPhotos count] > MAX_BUFFER_SIZE) ? MAX_BUFFER_SIZE:[self.gameCardPhotos count]);
+    loadedCards = [[NSMutableArray alloc] init];
+    self.allCards = [[NSMutableArray alloc] init];
+    cardsLoadedIndex = 0;
+    
+    if (self.gameCards.count > 0) {
+        
+        NSInteger numLoadedCardsCap =((self.gameCards.count > MAX_BUFFER_SIZE) ? MAX_BUFFER_SIZE:self.gameCards.count);
         //%%% if the buffer size is greater than the data size, there will be an array error, so this makes sure that doesn't happen
         
-        //%%% loops through the exampleCardsLabels array to create a card for each label.  This should be customized by removing "exampleCardLabels" with your own array of data
-        for (int i = 0; i < [self.gameCardPhotos count]; i++) {
+        for (int i = 0; i < self.gameCards.count; i++) {
+            
             BFPDraggableView *newCard = [self createDraggableViewWithDataAtIndex:i];
             [self.allCards addObject:newCard];
             
@@ -143,7 +127,6 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
         cardsLoadedIndex++;//%%% loaded a card, so have to increment count
         [self insertSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-1)] belowSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-2)]];
     }
-    
 }
 
 //%%% when you hit the right button, this is called and substitutes the swipe

@@ -57,29 +57,14 @@
                         <viewControllerLayoutGuide type="top" id="g10-sg-4Z9"/>
                         <viewControllerLayoutGuide type="bottom" id="QFw-yN-07H"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8QT-zu-a9M">
+                    <view key="view" contentMode="scaleToFill" id="8QT-zu-a9M" customClass="BFPDraggableViewBackground">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pih-1U-8m0" customClass="BFPDraggableViewBackground">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QTB-pG-od4">
-                                        <rect key="frame" x="180" y="127" width="237" height="260"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.81663073050000001" blue="0.90696414410000004" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Pih-1U-8m0" firstAttribute="leading" secondItem="8QT-zu-a9M" secondAttribute="leading" id="MFz-TN-cBX"/>
-                            <constraint firstItem="Pih-1U-8m0" firstAttribute="top" secondItem="g10-sg-4Z9" secondAttribute="bottom" constant="-20" id="q4f-to-z4O"/>
-                            <constraint firstItem="QFw-yN-07H" firstAttribute="top" secondItem="Pih-1U-8m0" secondAttribute="bottom" id="qsg-Jj-RRh"/>
-                            <constraint firstAttribute="trailing" secondItem="Pih-1U-8m0" secondAttribute="trailing" id="rUu-ju-TWN"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.80000001190000003" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="draggableBackgroundView" destination="8QT-zu-a9M" id="VfC-Vk-QnW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNY-iq-Hfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

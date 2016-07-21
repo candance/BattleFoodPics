@@ -20,27 +20,36 @@
     CGFloat yFromCenter;
 }
 
+static const float CARD_HEIGHT = 386; //%%% height of the draggable card
+static const float CARD_WIDTH = 290; //%%% width of the draggable card
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         [self setupView];
 
-        self.cardImageView =[[UIImageView alloc] initWithFrame:CGRectMake(0,50,self.frame.size.width,self.frame.size.height)];
+        self.cardImageView =[[UIImageView alloc] initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT)];
+        
         [self addSubview:self.cardImageView];
+        [self bringSubviewToFront:self.cardImageView];
         
         self.backgroundColor = [UIColor whiteColor];
-#warning placeholder stuff, replace with card-specific information
         
         self.panGestureRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(beingDragged:)];
         
         [self addGestureRecognizer:self.panGestureRecognizer];
         
-        self.overlayView = [[BFPOverlayView alloc]initWithFrame:CGRectMake(self.frame.size.width/2-100, 0, 100, 100)];
+        self.overlayView = [[BFPOverlayView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT)];
+        
         self.overlayView.alpha = 0;
         [self addSubview:self.overlayView];
     }
     return self;
+}
+
+-(void)setCardImageView:(UIImageView *)cardImageView {
+    _cardImageView = cardImageView;
 }
 
 -(void)setupView

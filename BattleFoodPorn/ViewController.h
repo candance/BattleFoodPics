@@ -1,5 +1,5 @@
 //
-//  BFPGameVC.h
+//  ViewController.h
 //  BattleFoodPorn
 //
 //  Created by Candance Smith on 7/18/16.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BFPGameVC : UIViewController
+@interface ViewController : UIViewController
+
 
 @end
+

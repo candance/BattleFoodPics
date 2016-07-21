@@ -35,8 +35,8 @@
 
 @protocol DraggableViewDelegate <NSObject>
 
--(void)cardSwipedLeft:(UIView *)card;
--(void)cardSwipedRight:(UIView *)card;
+- (void)cardSwipedLeft:(UIView *)card;
+- (void)cardSwipedRight:(UIView *)card;
 
 @end
 

@@ -10,14 +10,14 @@
 #import "BFPDraggableViewBackground.h"
 #import "AFNetworking.h"
 #import "UIImageView+AFNetworking.h"
+#import "BFPGameCard.h"
 
 @interface BFPGameVC ()
 
 @property (strong, nonatomic) NSArray *shittyFoodPornPhotosResults;
 @property (strong, nonatomic) NSArray *foodPornPhotosResults;
-@property (strong, nonatomic) NSArray *mergedPhotosResults;
-@property (strong, nonatomic) NSArray *randomPhotosArray;
-@property (strong, nonatomic) NSArray *randomPhotosURL;
+@property (strong, nonatomic) NSMutableArray *gameCards;
+@property (strong, nonatomic) IBOutlet BFPDraggableViewBackground *draggableBackgroundView;
 
 @end
 
@@ -72,17 +72,25 @@
 
 - (void)mergePhotosResultsAndGetGamePhotos {
     
-    self.mergedPhotosResults = [self.shittyFoodPornPhotosResults arrayByAddingObjectsFromArray:self.foodPornPhotosResults];
+    NSArray *mergedPhotosResults = [self.shittyFoodPornPhotosResults arrayByAddingObjectsFromArray:self.foodPornPhotosResults];
 //    NSLog(@"Merged Photos Results:%@", self.mergedPhotosResults);
     
-    [self getRandomPhotosFrom:self.mergedPhotosResults];
-    [self downloadPhotosFrom:self.randomPhotosArray];
+    [self getRandomPhotosFrom:mergedPhotosResults];
 }
 
-- (NSArray *)getRandomPhotosFrom:(NSArray *)photosArray {
+- (void)getRandomPhotosFrom:(NSArray *)photosArray {
+    
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    spinner.center = CGPointMake(self.view.frame.size.width * 0.5, self.view.frame.size.height * 0.5);
+    [self.view addSubview:spinner];
+    [self.view bringSubviewToFront:spinner];
+    spinner.hidesWhenStopped = YES;
+    spinner.hidden = NO;
+    
+    [spinner startAnimating];
     
     NSMutableArray *pickedPhotos = [NSMutableArray new];
-
+    
     int remaining = 20;
     
     if (photosArray.count >= remaining) {
@@ -97,61 +105,39 @@
         }
     }
     
-    self.randomPhotosArray = [pickedPhotos copy];
-//    NSLog(@"Picked photos:%@", self.gamePhotosArray);
+    NSArray *randomPhotosArray = [pickedPhotos copy];
+    //    NSLog(@"Picked photos:%@", self.gamePhotosArray);
     
-    return self.randomPhotosArray;
-}
-
-- (void)downloadPhotosFrom:(NSArray *)randomPhotosArray {
-    
-    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    spinner.center = CGPointMake(self.view.frame.size.width * 0.5, self.view.frame.size.height * 0.5);
-    [self.view addSubview:spinner];
-    [self.view bringSubviewToFront:spinner];
-    spinner.hidesWhenStopped = YES;
-    spinner.hidden = NO;
-    
-    [spinner startAnimating];
-    
-    self.photoSubreddit = [randomPhotosArray valueForKeyPath:IMGUR_SUBREDDIT];
-//    NSLog(@"Subreddit: %@", self.photoSubreddit);
-    
-    self.randomPhotosURL = [randomPhotosArray valueForKeyPath:IMGUR_PHOTO_URL];
-//    NSLog(@"URL: %@", self.randomPhotosURL);
-    
-    NSMutableArray *photos = [NSMutableArray arrayWithCapacity:self.randomPhotosURL.count];
-    
-    for (int i = 0; i < self.randomPhotosURL.count; i++) {
-        [photos addObject:[NSNull null]];
-    }
-    for (int i = 0; i < self.randomPhotosURL.count; i++) {
-        NSURL *url = [NSURL URLWithString:self.randomPhotosURL[i]];
+    for (NSString *photo in randomPhotosArray) {
+        BFPGameCard *card = [[BFPGameCard alloc] init];
+        card.imageURL = [photo valueForKeyPath:IMGUR_PHOTO_URL];
+        NSString *subreddit = [photo valueForKeyPath:IMGUR_SUBREDDIT];
+        if ([subreddit isEqualToString:@"shittyfoodporn"]) {
+            card.isShitty = YES;
+        } else {
+            card.isShitty = NO;
+        }
+        NSURL *url = [NSURL URLWithString:card.imageURL];
         AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
         manager.responseSerializer = [AFImageResponseSerializer serializer];
         [manager GET:url.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-            UIImage *photo = responseObject;
-            [photos replaceObjectAtIndex:i withObject:photo];
-            
-            // make sure all photos have been downloaded before passing it to gamePhotos
-            if (![photos containsObject:[NSNull null]]) {
-                self.gamePhotos = [photos copy];
-//                NSLog(@"Downloaded photos:%@", self.gamePhotos);
-            }
-            
-            if (self.gamePhotos) {
+            card.image = responseObject;
+            [self.gameCards addObject:card];
+            if (self.gameCards.count == 20) {
+                self.draggableBackgroundView.gameCards = self.gameCards;
                 [spinner stopAnimating];
-                BFPDraggableViewBackground *draggableBackground = [[BFPDraggableViewBackground alloc]initWithFrame:self.view.frame];
-                draggableBackground.gameCardPhotos = self.gamePhotos;
-                NSLog(@"Example: %@", draggableBackground.gameCardPhotos);
-                
-//                [self.view addSubview:draggableBackground];
+                [self.draggableBackgroundView loadCards];
             }
-            
         } failure:^(NSURLSessionDataTask *operation, NSError *error) {
             NSLog(@"Error: %@", error);
         }];
     }
+}
+
+- (NSMutableArray *)gameCards {
+    if (!_gameCards) _gameCards = [[NSMutableArray alloc] init];
+    
+    return _gameCards;
 }
 
 @end
