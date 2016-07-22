@@ -11,6 +11,7 @@
 #import "AFNetworking.h"
 #import "UIImageView+AFNetworking.h"
 #import "BFPGameCard.h"
+#import "BFPEndGameVC.h"
 
 @interface BFPGameVC ()
 
@@ -30,6 +31,7 @@
     [super viewDidLoad];
     [self getShittyFoodPorn];
     [self getFoodPorn];
+    self.draggableBackgroundView.delegate = self;
 }
 
 - (void)getShittyFoodPorn {
@@ -138,6 +140,17 @@
     if (!_gameCards) _gameCards = [[NSMutableArray alloc] init];
     
     return _gameCards;
+}
+
+- (void)gameEndedConfirmationForSegue {
+    [self performSegueWithIdentifier:@"End Game Page" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"End Game Page"]) {
+        BFPEndGameVC *vc = [segue destinationViewController];
+        vc.finalScore = self.draggableBackgroundView.score;
+        }
 }
 
 @end

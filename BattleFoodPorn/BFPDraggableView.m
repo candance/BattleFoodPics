@@ -139,6 +139,8 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
                              self.overlayView.alpha = 0;
                          }];
     }
+    
+    [self.delegate checkIfGameHasEnded];
 }
 
 //%%% called when a swipe exceeds the ACTION_MARGIN to the right
@@ -183,8 +185,6 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
                      }completion:^(BOOL complete){
                          [self removeFromSuperview];
                      }];
-    
-    [self.delegate cardSwipedRight:self];
     
     NSLog(@"GOOD");
 }

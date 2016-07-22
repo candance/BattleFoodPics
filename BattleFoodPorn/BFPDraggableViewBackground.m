@@ -7,8 +7,15 @@
 //
 
 #import "BFPDraggableViewBackground.h"
+#import "BFPGameCard.h"
+#import "BFPGameVC.h"
 
 @interface BFPDraggableViewBackground ()
+
+@property (strong, nonatomic) BFPGameVC *game;
+@property (strong, nonatomic) BFPGameCard *gameCard;
+@property (nonatomic) NSInteger scoreGained;
+@property (nonatomic, readwrite) NSInteger score;
 
 @end
 
@@ -21,6 +28,7 @@
 //    UIButton* messageButton;
 //    UIButton* foodPornButton;
 //    UIButton* shittyFoodPornButton;
+    UILabel *scoreLabel;
 }
 
 //this makes it so only two cards are loaded at a time to avoid performance and memory costs
@@ -31,6 +39,12 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 //%%% sets up the extra buttons on the screen
 -(void)setupView
 {
+    self.backgroundColor = [UIColor colorWithRed:0.75 green:1.00 blue:0.71 alpha:1.0];
+    scoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, 25, 150, 50)];
+    scoreLabel.text = [NSString stringWithFormat:@"SCORE: 0"];
+//    [scoreLabel setFont:[UIFont fontWithName:@"ArialMT" size:16]];
+    scoreLabel.textColor = [UIColor whiteColor];
+    [self addSubview:scoreLabel];
 #warning customize all of this.  These are just place holders to make it look pretty
 //    menuButton = [[UIButton alloc]initWithFrame:CGRectMake(17, 34, 22, 15)];
 //    [menuButton setImage:[UIImage imageNamed:@"shitty"] forState:UIControlStateNormal];
@@ -55,6 +69,7 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     
     draggableView.cardImageView.contentMode = UIViewContentModeScaleAspectFit;
     draggableView.cardImageView.image = [self.gameCards objectAtIndex:index].image;
+    draggableView.isShitty = [self.gameCards objectAtIndex:index].isShitty;
     draggableView.delegate = self;
     return draggableView;
 }
@@ -62,9 +77,12 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 //%%% loads all the cards and puts the first x in the "loaded cards" array
 -(void)loadCards {
     
+    [self setupView];
+    
     loadedCards = [[NSMutableArray alloc] init];
     self.allCards = [[NSMutableArray alloc] init];
     cardsLoadedIndex = 0;
+    self.score = 0;
     
     if (self.gameCards.count > 0) {
         
@@ -95,13 +113,28 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     }
 }
 
-#warning include own action here!
+- (void)checkIfGameHasEnded {
+    if (!loadedCards.count) {
+        NSLog(@"Game Finishes");
+        [self.delegate gameEndedConfirmationForSegue];
+    }
+}
+
 //%%% action called when the card goes to the left.
-// This should be customized with your own action
 -(void)cardSwipedLeft:(UIView *)card {
     
     //do whatever you want with the card that was swiped
-    //    DraggableView *c = (DraggableView *)card;
+    BFPDraggableView *c = (BFPDraggableView *)card;
+    
+    if (c.isShitty) {
+        self.scoreGained = 10;
+    }
+    else {
+        self.scoreGained = -5;
+    }
+    
+    self.score += self.scoreGained;
+    scoreLabel.text = [NSString stringWithFormat:@"SCORE: %ld", self.score];
     
     [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
     
@@ -112,13 +145,21 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     }
 }
 
-#warning include own action here!
 //%%% action called when the card goes to the right.
-// This should be customized with your own action
 -(void)cardSwipedRight:(UIView *)card {
     
     //do whatever you want with the card that was swiped
-    //    DraggableView *c = (DraggableView *)card;
+    BFPDraggableView *c = (BFPDraggableView *)card;
+
+    if (c.isShitty) {
+        self.scoreGained = -5;
+    }
+    else {
+        self.scoreGained = 10;
+    }
+    
+    self.score += self.scoreGained;
+    scoreLabel.text = [NSString stringWithFormat:@"SCORE: %ld", self.score];
     
     [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
     

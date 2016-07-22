@@ -37,6 +37,7 @@
 
 - (void)cardSwipedLeft:(UIView *)card;
 - (void)cardSwipedRight:(UIView *)card;
+- (void)checkIfGameHasEnded;
 
 @end
 
@@ -45,6 +46,7 @@
 @property (weak) id <DraggableViewDelegate> delegate;
 
 @property (strong, nonatomic) UIImageView *cardImageView;
+@property (nonatomic) BOOL isShitty;
 @property (strong, nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
 @property (nonatomic) CGPoint originalPoint;
 @property (strong, nonatomic) BFPOverlayView *overlayView;

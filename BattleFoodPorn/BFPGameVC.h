@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BFPDraggableViewBackground.h"
 
-@interface BFPGameVC : UIViewController
+@interface BFPGameVC : UIViewController <DraggableViewBackgroundDelegate>
+
+- (void)gameEndedConfirmationForSegue;
 
 @end

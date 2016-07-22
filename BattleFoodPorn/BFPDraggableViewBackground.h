@@ -33,18 +33,26 @@
 
 #import <UIKit/UIKit.h>
 #import "BFPDraggableView.h"
-#import "BFPGameVC.h"
 #import "BFPGameCard.h"
+
+@protocol DraggableViewBackgroundDelegate <NSObject>
+
+- (void)gameEndedConfirmationForSegue;
+
+@end
 
 @interface BFPDraggableViewBackground : UIView <DraggableViewDelegate>
 
 //methods called in DraggableView
 - (void)cardSwipedLeft:(UIView *)card;
 - (void)cardSwipedRight:(UIView *)card;
+- (void)checkIfGameHasEnded;
+
 - (void)loadCards;
 
+@property (weak) id <DraggableViewBackgroundDelegate> delegate;
 @property (retain,nonatomic) NSArray<BFPGameCard *> *gameCards;
 @property (retain,nonatomic) NSMutableArray* allCards;
-
+@property (nonatomic, readonly) NSInteger score;
 
 @end

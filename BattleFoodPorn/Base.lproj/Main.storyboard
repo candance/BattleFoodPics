@@ -60,15 +60,42 @@
                     <view key="view" contentMode="scaleToFill" id="8QT-zu-a9M" customClass="BFPDraggableViewBackground">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.80000001190000003" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="draggableBackgroundView" destination="8QT-zu-a9M" id="VfC-Vk-QnW"/>
+                        <segue destination="noG-kE-1f4" kind="show" identifier="End Game Page" id="48w-7V-N6e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNY-iq-Hfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1081" y="276"/>
+        </scene>
+        <!--End GameVC-->
+        <scene sceneID="jOg-Am-JAC">
+            <objects>
+                <viewController id="noG-kE-1f4" customClass="BFPEndGameVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g5L-1n-0JW"/>
+                        <viewControllerLayoutGuide type="bottom" id="zei-Db-hvp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C5y-SW-xlq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Done!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tQ-b8-LWG">
+                                <rect key="frame" x="284" y="196" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j03-qT-0j1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1839" y="276"/>
         </scene>
     </scenes>
 </document>
