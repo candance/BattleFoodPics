@@ -156,7 +156,7 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     
     [self.delegate cardSwipedRight:self];
     
-    NSLog(@"YES");
+    NSLog(@"FOOD PORN");
 }
 
 //%%% called when a swipe exceeds the ACTION_MARGIN to the left
@@ -172,7 +172,7 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     
     [self.delegate cardSwipedLeft:self];
     
-    NSLog(@"NO");
+    NSLog(@"SHITTY FOOD PORN");
 }
 
 -(void)rightClickAction {
@@ -186,7 +186,7 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
                          [self removeFromSuperview];
                      }];
     
-    NSLog(@"GOOD");
+    NSLog(@"FOOD PORN");
 }
 
 -(void)leftClickAction {
@@ -202,7 +202,7 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     
     [self.delegate cardSwipedLeft:self];
     
-    NSLog(@"BAD");
+    NSLog(@"SHITTY FOOD PORN");
 }
 
 @end

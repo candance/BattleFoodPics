@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--InitialVC-->
@@ -17,22 +18,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Battle Food Porn!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PH8-yr-3lN">
-                                <rect key="frame" x="167" y="220" width="266" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Battle Food Porn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PH8-yr-3lN">
+                                <rect key="frame" x="226" y="220" width="149" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffT-vU-Q5L">
-                                <rect key="frame" x="251" y="364" width="99" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Click to Play!"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffT-vU-Q5L">
+                                <rect key="frame" x="263" y="364" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="LxZ-Ek-ZR4"/>
+                                    <constraint firstAttribute="width" constant="75" id="hDA-Ei-rEP"/>
+                                </constraints>
+                                <state key="normal" title="Click to Play!" image="Play"/>
                                 <connections>
                                     <action selector="startGameButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I6J-fM-g5D"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="PH8-yr-3lN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5hW-J8-6hB"/>
                             <constraint firstItem="ffT-vU-Q5L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G7t-u2-UiD"/>
@@ -60,7 +64,44 @@
                     <view key="view" contentMode="scaleToFill" id="8QT-zu-a9M" customClass="BFPDraggableViewBackground">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1w-SL-bU7">
+                                <rect key="frame" x="275" y="45" width="50" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucE-oq-S8c">
+                                <rect key="frame" x="294" y="71" width="13" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.32857548732114533" green="0.82449919871794874" blue="0.66724504608920732" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="572-7N-yTZ">
+                                <rect key="frame" x="479" y="540" width="71" height="30"/>
+                                <state key="normal" title="Food Porn"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5GI-7d-Z61">
+                                <rect key="frame" x="50" y="540" width="115" height="30"/>
+                                <state key="normal" title="Shitty Food Porn"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="I1w-SL-bU7" firstAttribute="centerX" secondItem="8QT-zu-a9M" secondAttribute="centerX" id="AwN-PI-vRO"/>
+                            <constraint firstItem="QFw-yN-07H" firstAttribute="top" secondItem="572-7N-yTZ" secondAttribute="bottom" constant="30" id="C42-Tr-cUK"/>
+                            <constraint firstItem="I1w-SL-bU7" firstAttribute="top" secondItem="g10-sg-4Z9" secondAttribute="bottom" constant="25" id="Epz-RR-cPm"/>
+                            <constraint firstItem="5GI-7d-Z61" firstAttribute="leading" secondItem="8QT-zu-a9M" secondAttribute="leadingMargin" constant="30" id="cKq-Tf-XNr"/>
+                            <constraint firstItem="QFw-yN-07H" firstAttribute="top" secondItem="5GI-7d-Z61" secondAttribute="bottom" constant="30" id="cv5-MS-73c"/>
+                            <constraint firstItem="ucE-oq-S8c" firstAttribute="centerX" secondItem="8QT-zu-a9M" secondAttribute="centerX" id="mu3-YE-HaK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="572-7N-yTZ" secondAttribute="trailing" constant="30" id="udL-bb-I1N"/>
+                            <constraint firstItem="ucE-oq-S8c" firstAttribute="top" secondItem="I1w-SL-bU7" secondAttribute="bottom" constant="8" id="vj1-M8-MwY"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="foodPornButton" destination="572-7N-yTZ" id="huP-M6-3Eb"/>
+                            <outlet property="scoreLabel" destination="ucE-oq-S8c" id="97V-yr-ebv"/>
+                            <outlet property="shittyFoodPornButton" destination="5GI-7d-Z61" id="hVf-Qg-6KW"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="draggableBackgroundView" destination="8QT-zu-a9M" id="VfC-Vk-QnW"/>
@@ -83,19 +124,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Done!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tQ-b8-LWG">
-                                <rect key="frame" x="284" y="196" width="46" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FINAL SCORE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tQ-b8-LWG">
+                                <rect key="frame" x="226" y="200" width="149" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZR-RG-swo">
+                                <rect key="frame" x="264" y="237" width="73" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwn-GW-REv">
+                                <rect key="frame" x="265" y="379" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Lb0-6J-8dH"/>
+                                    <constraint firstAttribute="height" constant="70" id="tBf-KJ-DXc"/>
+                                </constraints>
+                                <state key="normal" title="Replay" image="Replay"/>
+                                <connections>
+                                    <action selector="replayButtonTapped:" destination="noG-kE-1f4" eventType="touchUpInside" id="upn-A4-bdK"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Qwn-GW-REv" firstAttribute="top" secondItem="5tQ-b8-LWG" secondAttribute="bottom" constant="150" id="ECw-2e-2ZE"/>
+                            <constraint firstItem="UZR-RG-swo" firstAttribute="centerX" secondItem="C5y-SW-xlq" secondAttribute="centerX" id="S3V-ue-eiF"/>
+                            <constraint firstItem="Qwn-GW-REv" firstAttribute="centerX" secondItem="C5y-SW-xlq" secondAttribute="centerX" id="Til-hw-UKd"/>
+                            <constraint firstItem="UZR-RG-swo" firstAttribute="top" secondItem="5tQ-b8-LWG" secondAttribute="bottom" constant="8" id="TmY-2d-HwV"/>
+                            <constraint firstItem="5tQ-b8-LWG" firstAttribute="top" secondItem="g5L-1n-0JW" secondAttribute="bottom" constant="180" id="asj-Fy-iId"/>
+                            <constraint firstItem="5tQ-b8-LWG" firstAttribute="centerX" secondItem="C5y-SW-xlq" secondAttribute="centerX" id="dEs-8g-hUM"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="finalScoreLabel" destination="UZR-RG-swo" id="1Yg-Dn-C57"/>
+                        <outlet property="replayButton" destination="Qwn-GW-REv" id="kYG-31-kcn"/>
+                        <segue destination="VY4-o5-Ipa" kind="show" identifier="Replay Game" id="TZs-H0-hk8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j03-qT-0j1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1839" y="276"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Play" width="1024" height="1024"/>
+        <image name="Replay" width="889" height="889"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="YxX-kd-VHZ"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -17,18 +17,17 @@
 @property (nonatomic) NSInteger scoreGained;
 @property (nonatomic, readwrite) NSInteger score;
 
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UIButton *shittyFoodPornButton;
+@property (weak, nonatomic) IBOutlet UIButton *foodPornButton;
+
+
 @end
 
 @implementation BFPDraggableViewBackground {
     
     NSInteger cardsLoadedIndex; //%%% the index of the card you have loaded into the loadedCards array last
     NSMutableArray *loadedCards; //%%% the array of card loaded (change max_buffer_size to increase or decrease the number of cards this holds)
-//    
-//    UIButton* menuButton;
-//    UIButton* messageButton;
-//    UIButton* foodPornButton;
-//    UIButton* shittyFoodPornButton;
-    UILabel *scoreLabel;
 }
 
 //this makes it so only two cards are loaded at a time to avoid performance and memory costs
@@ -39,27 +38,15 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 //%%% sets up the extra buttons on the screen
 -(void)setupView
 {
-    self.backgroundColor = [UIColor colorWithRed:0.75 green:1.00 blue:0.71 alpha:1.0];
-    scoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, 25, 150, 50)];
-    scoreLabel.text = [NSString stringWithFormat:@"SCORE: 0"];
-//    [scoreLabel setFont:[UIFont fontWithName:@"ArialMT" size:16]];
-    scoreLabel.textColor = [UIColor whiteColor];
-    [self addSubview:scoreLabel];
-#warning customize all of this.  These are just place holders to make it look pretty
-//    menuButton = [[UIButton alloc]initWithFrame:CGRectMake(17, 34, 22, 15)];
-//    [menuButton setImage:[UIImage imageNamed:@"shitty"] forState:UIControlStateNormal];
-////    messageButton = [[UIButton alloc]initWithFrame:CGRectMake(284, 34, 18, 18)];
-////    [messageButton setImage:[UIImage imageNamed:@"notShitty"] forState:UIControlStateNormal];
-//    shittyFoodPornButton = [[UIButton alloc]initWithFrame:CGRectMake(60, 485, 59, 59)];
+//    self.backgroundColor = [UIColor colorWithRed:0.75 green:1.00 blue:0.71 alpha:1.0];
+    
+    //    [menuButton setImage:[UIImage imageNamed:@"shitty"] forState:UIControlStateNormal];
+
 //    [shittyFoodPornButton setImage:[UIImage imageNamed:@"shitty"] forState:UIControlStateNormal];
-//    [shittyFoodPornButton addTarget:self action:@selector(swipeLeft) forControlEvents:UIControlEventTouchUpInside];
-//    foodPornButton = [[UIButton alloc]initWithFrame:CGRectMake(200, 485, 59, 59)];
+    [self.shittyFoodPornButton addTarget:self action:@selector(swipeLeft) forControlEvents:UIControlEventTouchUpInside];
+    
 //    [foodPornButton setImage:[UIImage imageNamed:@"notShitty"] forState:UIControlStateNormal];
-//    [foodPornButton addTarget:self action:@selector(swipeRight) forControlEvents:UIControlEventTouchUpInside];
-//    [self addSubview:menuButton];
-////    [self addSubview:messageButton];
-//    [self addSubview:shittyFoodPornButton];
-//    [self addSubview:foodPornButton];
+    [self.foodPornButton addTarget:self action:@selector(swipeRight) forControlEvents:UIControlEventTouchUpInside];
 }
 
 //%%% creates a card and returns it.
@@ -134,7 +121,7 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     }
     
     self.score += self.scoreGained;
-    scoreLabel.text = [NSString stringWithFormat:@"SCORE: %ld", self.score];
+    self.scoreLabel.text = [NSString stringWithFormat:@"%ld", self.score];
     
     [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
     
@@ -159,7 +146,7 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     }
     
     self.score += self.scoreGained;
-    scoreLabel.text = [NSString stringWithFormat:@"SCORE: %ld", self.score];
+    self.scoreLabel.text = [NSString stringWithFormat:@"%ld", self.score];
     
     [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
     

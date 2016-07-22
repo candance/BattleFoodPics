@@ -9,10 +9,22 @@
 #import "BFPEndGameVC.h"
 #import "BFPDraggableViewBackground.h"
 
+@interface BFPEndGameVC ()
+
+@property (weak, nonatomic) IBOutlet UILabel *finalScoreLabel;
+@property (weak, nonatomic) IBOutlet UIButton *replayButton;
+
+@end
+
 @implementation BFPEndGameVC
 
 -(void)viewDidLoad {
     [super viewDidLoad];
+    self.finalScoreLabel.text = [NSString stringWithFormat:@"%ld", self.finalScore];
+}
+
+- (IBAction)replayButtonTapped:(id)sender {
+    [self performSegueWithIdentifier:@"Replay Game" sender:sender];
 }
 
 @end
