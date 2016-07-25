@@ -18,14 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Battle Food Porn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PH8-yr-3lN">
-                                <rect key="frame" x="226" y="220" width="149" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffT-vU-Q5L">
-                                <rect key="frame" x="263" y="364" width="75" height="75"/>
+                                <rect key="frame" x="263" y="450" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="LxZ-Ek-ZR4"/>
                                     <constraint firstAttribute="width" constant="75" id="hDA-Ei-rEP"/>
@@ -35,14 +29,58 @@
                                     <action selector="startGameButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I6J-fM-g5D"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PH8-yr-3lN">
+                                <rect key="frame" x="132" y="271" width="337" height="59"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="BATTLE">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="42" name="HelveticaNeue-CondensedBold"/>
+                                            <font key="NSOriginalFont" size="43" name="AvenirNextCondensed-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" FOOD PORN">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="43" name="AvenirNextCondensed-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cutlery" translatesAutoresizingMaskIntoConstraints="NO" id="DDc-ik-nDC">
+                                <rect key="frame" x="221" y="98" width="158" height="153"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="153" id="OIJ-C5-6c2"/>
+                                    <constraint firstAttribute="width" constant="158" id="UYE-e7-QZP"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="PH8-yr-3lN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5hW-J8-6hB"/>
+                            <constraint firstItem="DDc-ik-nDC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EBa-FE-jNz"/>
+                            <constraint firstItem="DDc-ik-nDC" firstAttribute="top" secondItem="PH8-yr-3lN" secondAttribute="bottom" constant="50" id="FRU-qb-NvN"/>
                             <constraint firstItem="ffT-vU-Q5L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G7t-u2-UiD"/>
-                            <constraint firstItem="ffT-vU-Q5L" firstAttribute="top" secondItem="PH8-yr-3lN" secondAttribute="bottom" constant="120" id="vbH-Cr-k8r"/>
-                            <constraint firstItem="PH8-yr-3lN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="200" id="wK8-Qz-yW9"/>
+                            <constraint firstItem="PH8-yr-3lN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HN6-yw-BOk"/>
+                            <constraint firstItem="PH8-yr-3lN" firstAttribute="top" secondItem="DDc-ik-nDC" secondAttribute="bottom" constant="20" id="Kwu-PF-2pB"/>
+                            <constraint firstItem="ffT-vU-Q5L" firstAttribute="top" secondItem="PH8-yr-3lN" secondAttribute="bottom" constant="120" id="WBR-hW-DdT"/>
+                            <constraint firstItem="PH8-yr-3lN" firstAttribute="top" secondItem="DDc-ik-nDC" secondAttribute="bottom" constant="20" id="e3R-uy-d7h"/>
+                            <constraint firstItem="ffT-vU-Q5L" firstAttribute="top" secondItem="DDc-ik-nDC" secondAttribute="bottom" constant="50" id="hbx-CB-HEh"/>
+                            <constraint firstItem="DDc-ik-nDC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="j7M-PC-V0W"/>
+                            <constraint firstItem="PH8-yr-3lN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="159" id="wK8-Qz-yW9"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="FRU-qb-NvN"/>
+                                <exclude reference="j7M-PC-V0W"/>
+                                <exclude reference="Kwu-PF-2pB"/>
+                                <exclude reference="wK8-Qz-yW9"/>
+                                <exclude reference="hbx-CB-HEh"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="startGameButton" destination="ffT-vU-Q5L" id="sMI-NB-ppo"/>
@@ -66,41 +104,61 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1w-SL-bU7">
-                                <rect key="frame" x="275" y="45" width="50" height="18"/>
+                                <rect key="frame" x="275" y="35" width="50" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucE-oq-S8c">
-                                <rect key="frame" x="294" y="71" width="13" height="24"/>
+                                <rect key="frame" x="294" y="56" width="13" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.32857548732114533" green="0.82449919871794874" blue="0.66724504608920732" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="572-7N-yTZ">
-                                <rect key="frame" x="479" y="540" width="71" height="30"/>
-                                <state key="normal" title="Food Porn"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5GI-7d-Z61">
-                                <rect key="frame" x="50" y="540" width="115" height="30"/>
-                                <state key="normal" title="Shitty Food Porn"/>
+                                <rect key="frame" x="35" y="516" width="154" height="34"/>
+                                <color key="backgroundColor" red="1" green="0.74674939780000005" blue="0.1900869761" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title=" Shitty Food Porn ">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="572-7N-yTZ">
+                                <rect key="frame" x="411" y="516" width="154" height="34"/>
+                                <color key="backgroundColor" red="0.75442922796971257" green="0.44108431001030046" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Food Porn">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QyH-LC-cGN">
+                                <rect key="frame" x="280" y="90" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="8Gr-qq-jIr"/>
+                                    <constraint firstAttribute="height" constant="40" id="Bol-hf-mLJ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="I1w-SL-bU7" firstAttribute="centerX" secondItem="8QT-zu-a9M" secondAttribute="centerX" id="AwN-PI-vRO"/>
-                            <constraint firstItem="QFw-yN-07H" firstAttribute="top" secondItem="572-7N-yTZ" secondAttribute="bottom" constant="30" id="C42-Tr-cUK"/>
-                            <constraint firstItem="I1w-SL-bU7" firstAttribute="top" secondItem="g10-sg-4Z9" secondAttribute="bottom" constant="25" id="Epz-RR-cPm"/>
-                            <constraint firstItem="5GI-7d-Z61" firstAttribute="leading" secondItem="8QT-zu-a9M" secondAttribute="leadingMargin" constant="30" id="cKq-Tf-XNr"/>
-                            <constraint firstItem="QFw-yN-07H" firstAttribute="top" secondItem="5GI-7d-Z61" secondAttribute="bottom" constant="30" id="cv5-MS-73c"/>
+                            <constraint firstItem="QFw-yN-07H" firstAttribute="top" secondItem="572-7N-yTZ" secondAttribute="bottom" constant="50" id="C42-Tr-cUK"/>
+                            <constraint firstItem="I1w-SL-bU7" firstAttribute="top" secondItem="g10-sg-4Z9" secondAttribute="bottom" constant="15" id="Epz-RR-cPm"/>
+                            <constraint firstItem="QyH-LC-cGN" firstAttribute="top" secondItem="ucE-oq-S8c" secondAttribute="bottom" constant="10" id="MEc-Fx-RO1"/>
+                            <constraint firstItem="5GI-7d-Z61" firstAttribute="height" secondItem="572-7N-yTZ" secondAttribute="height" id="QvO-h9-x6o"/>
+                            <constraint firstItem="QyH-LC-cGN" firstAttribute="centerX" secondItem="8QT-zu-a9M" secondAttribute="centerX" id="WXZ-dQ-g2J"/>
+                            <constraint firstItem="5GI-7d-Z61" firstAttribute="leading" secondItem="8QT-zu-a9M" secondAttribute="leadingMargin" constant="15" id="cKq-Tf-XNr"/>
+                            <constraint firstItem="QFw-yN-07H" firstAttribute="top" secondItem="5GI-7d-Z61" secondAttribute="bottom" constant="50" id="cv5-MS-73c"/>
+                            <constraint firstItem="5GI-7d-Z61" firstAttribute="width" secondItem="572-7N-yTZ" secondAttribute="width" id="j6L-dz-eEh"/>
                             <constraint firstItem="ucE-oq-S8c" firstAttribute="centerX" secondItem="8QT-zu-a9M" secondAttribute="centerX" id="mu3-YE-HaK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="572-7N-yTZ" secondAttribute="trailing" constant="30" id="udL-bb-I1N"/>
-                            <constraint firstItem="ucE-oq-S8c" firstAttribute="top" secondItem="I1w-SL-bU7" secondAttribute="bottom" constant="8" id="vj1-M8-MwY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="572-7N-yTZ" secondAttribute="trailing" constant="15" id="udL-bb-I1N"/>
+                            <constraint firstItem="ucE-oq-S8c" firstAttribute="top" secondItem="I1w-SL-bU7" secondAttribute="bottom" constant="3" id="vj1-M8-MwY"/>
                         </constraints>
                         <connections>
                             <outlet property="foodPornButton" destination="572-7N-yTZ" id="huP-M6-3Eb"/>
                             <outlet property="scoreLabel" destination="ucE-oq-S8c" id="97V-yr-ebv"/>
                             <outlet property="shittyFoodPornButton" destination="5GI-7d-Z61" id="hVf-Qg-6KW"/>
+                            <outlet property="statusImage" destination="QyH-LC-cGN" id="ESS-K2-w7Y"/>
                         </connections>
                     </view>
                     <connections>
@@ -131,8 +189,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZR-RG-swo">
-                                <rect key="frame" x="264" y="237" width="73" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <rect key="frame" x="261" y="234" width="78" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -153,7 +211,7 @@
                             <constraint firstItem="Qwn-GW-REv" firstAttribute="top" secondItem="5tQ-b8-LWG" secondAttribute="bottom" constant="150" id="ECw-2e-2ZE"/>
                             <constraint firstItem="UZR-RG-swo" firstAttribute="centerX" secondItem="C5y-SW-xlq" secondAttribute="centerX" id="S3V-ue-eiF"/>
                             <constraint firstItem="Qwn-GW-REv" firstAttribute="centerX" secondItem="C5y-SW-xlq" secondAttribute="centerX" id="Til-hw-UKd"/>
-                            <constraint firstItem="UZR-RG-swo" firstAttribute="top" secondItem="5tQ-b8-LWG" secondAttribute="bottom" constant="8" id="TmY-2d-HwV"/>
+                            <constraint firstItem="UZR-RG-swo" firstAttribute="top" secondItem="5tQ-b8-LWG" secondAttribute="bottom" constant="5" id="TmY-2d-HwV"/>
                             <constraint firstItem="5tQ-b8-LWG" firstAttribute="top" secondItem="g5L-1n-0JW" secondAttribute="bottom" constant="180" id="asj-Fy-iId"/>
                             <constraint firstItem="5tQ-b8-LWG" firstAttribute="centerX" secondItem="C5y-SW-xlq" secondAttribute="centerX" id="dEs-8g-hUM"/>
                         </constraints>
@@ -172,8 +230,9 @@
     <resources>
         <image name="Play" width="1024" height="1024"/>
         <image name="Replay" width="889" height="889"/>
+        <image name="cutlery" width="491" height="493"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YxX-kd-VHZ"/>
+        <segue reference="TZs-H0-hk8"/>
     </inferredMetricsTieBreakers>
 </document>

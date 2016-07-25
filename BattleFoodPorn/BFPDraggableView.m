@@ -186,7 +186,11 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
                          [self removeFromSuperview];
                      }];
     
+    [self.delegate cardSwipedRight:self];
+    
     NSLog(@"FOOD PORN");
+    
+    [self.delegate checkIfGameHasEnded];
 }
 
 -(void)leftClickAction {
@@ -203,6 +207,8 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     [self.delegate cardSwipedLeft:self];
     
     NSLog(@"SHITTY FOOD PORN");
+    
+    [self.delegate checkIfGameHasEnded];
 }
 
 @end

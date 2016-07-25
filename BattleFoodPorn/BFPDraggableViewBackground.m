@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UIButton *shittyFoodPornButton;
 @property (weak, nonatomic) IBOutlet UIButton *foodPornButton;
-
+@property (weak, nonatomic) IBOutlet UIImageView *statusImage;
 
 @end
 
@@ -38,14 +38,7 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 //%%% sets up the extra buttons on the screen
 -(void)setupView
 {
-//    self.backgroundColor = [UIColor colorWithRed:0.75 green:1.00 blue:0.71 alpha:1.0];
-    
-    //    [menuButton setImage:[UIImage imageNamed:@"shitty"] forState:UIControlStateNormal];
-
-//    [shittyFoodPornButton setImage:[UIImage imageNamed:@"shitty"] forState:UIControlStateNormal];
     [self.shittyFoodPornButton addTarget:self action:@selector(swipeLeft) forControlEvents:UIControlEventTouchUpInside];
-    
-//    [foodPornButton setImage:[UIImage imageNamed:@"notShitty"] forState:UIControlStateNormal];
     [self.foodPornButton addTarget:self action:@selector(swipeRight) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -115,9 +108,11 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     
     if (c.isShitty) {
         self.scoreGained = 10;
+        self.statusImage.image = [UIImage imageNamed:@"right"];
     }
     else {
         self.scoreGained = -5;
+        self.statusImage.image = [UIImage imageNamed:@"wrong"];
     }
     
     self.score += self.scoreGained;
@@ -140,9 +135,11 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 
     if (c.isShitty) {
         self.scoreGained = -5;
+        self.statusImage.image = [UIImage imageNamed:@"wrong"];
     }
     else {
         self.scoreGained = 10;
+        self.statusImage.image = [UIImage imageNamed:@"right"];
     }
     
     self.score += self.scoreGained;
