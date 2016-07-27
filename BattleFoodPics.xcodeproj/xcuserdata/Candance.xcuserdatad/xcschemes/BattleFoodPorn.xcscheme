@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0D45A2DF1D3D7C490006051D"
-               BuildableName = "BattleFoodPorn.app"
-               BlueprintName = "BattleFoodPorn"
-               ReferencedContainer = "container:BattleFoodPorn.xcodeproj">
+               BuildableName = "BattleFoodPics.app"
+               BlueprintName = "BattleFoodPics"
+               ReferencedContainer = "container:BattleFoodPics.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0D45A2DF1D3D7C490006051D"
-            BuildableName = "BattleFoodPorn.app"
-            BlueprintName = "BattleFoodPorn"
-            ReferencedContainer = "container:BattleFoodPorn.xcodeproj">
+            BuildableName = "BattleFoodPics.app"
+            BlueprintName = "BattleFoodPics"
+            ReferencedContainer = "container:BattleFoodPics.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0D45A2DF1D3D7C490006051D"
-            BuildableName = "BattleFoodPorn.app"
-            BlueprintName = "BattleFoodPorn"
-            ReferencedContainer = "container:BattleFoodPorn.xcodeproj">
+            BuildableName = "BattleFoodPics.app"
+            BlueprintName = "BattleFoodPics"
+            ReferencedContainer = "container:BattleFoodPics.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0D45A2DF1D3D7C490006051D"
-            BuildableName = "BattleFoodPorn.app"
-            BlueprintName = "BattleFoodPorn"
-            ReferencedContainer = "container:BattleFoodPorn.xcodeproj">
+            BuildableName = "BattleFoodPics.app"
+            BlueprintName = "BattleFoodPics"
+            ReferencedContainer = "container:BattleFoodPics.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

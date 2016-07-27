@@ -30,7 +30,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PH8-yr-3lN">
-                                <rect key="frame" x="132" y="271" width="337" height="59"/>
+                                <rect key="frame" x="143" y="271" width="315" height="59"/>
                                 <attributedString key="attributedText">
                                     <fragment content="BATTLE">
                                         <attributes>
@@ -40,7 +40,7 @@
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content=" FOOD PORN">
+                                    <fragment content=" FOOD PICS">
                                         <attributes>
                                             <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="43" name="AvenirNextCondensed-Bold"/>
@@ -233,6 +233,6 @@
         <image name="cutlery" width="491" height="493"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TZs-H0-hk8"/>
+        <segue reference="YxX-kd-VHZ"/>
     </inferredMetricsTieBreakers>
 </document>

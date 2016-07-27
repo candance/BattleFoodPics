@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0D45A2E01D3D7C490006051D /* BattleFoodPorn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BattleFoodPorn.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D45A2E01D3D7C490006051D /* BattleFoodPics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BattleFoodPics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D45A2E41D3D7C490006051D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0D45A2E61D3D7C490006051D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0D45A2E71D3D7C490006051D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 		0D45A2D71D3D7C490006051D = {
 			isa = PBXGroup;
 			children = (
-				0D45A2E21D3D7C490006051D /* BattleFoodPorn */,
+				0D45A2E21D3D7C490006051D /* BattleFoodPics */,
 				0D45A2E11D3D7C490006051D /* Products */,
 				BB0F91DD782B720CE63A51CB /* Pods */,
 				D1610E809B7EFFDBB791BF33 /* Frameworks */,
@@ -75,12 +75,12 @@
 		0D45A2E11D3D7C490006051D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0D45A2E01D3D7C490006051D /* BattleFoodPorn.app */,
+				0D45A2E01D3D7C490006051D /* BattleFoodPics.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0D45A2E21D3D7C490006051D /* BattleFoodPorn */ = {
+		0D45A2E21D3D7C490006051D /* BattleFoodPics */ = {
 			isa = PBXGroup;
 			children = (
 				0D45A2EC1D3D7C490006051D /* Main.storyboard */,
@@ -95,6 +95,7 @@
 				0DA999731D411EF600899117 /* BFPGameCard.m */,
 				0D45A2E31D3D7C490006051D /* Supporting Files */,
 			);
+			name = BattleFoodPics;
 			path = BattleFoodPorn;
 			sourceTree = "<group>";
 		};
@@ -144,9 +145,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0D45A2DF1D3D7C490006051D /* BattleFoodPorn */ = {
+		0D45A2DF1D3D7C490006051D /* BattleFoodPics */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0D45A2F71D3D7C490006051D /* Build configuration list for PBXNativeTarget "BattleFoodPorn" */;
+			buildConfigurationList = 0D45A2F71D3D7C490006051D /* Build configuration list for PBXNativeTarget "BattleFoodPics" */;
 			buildPhases = (
 				F96DD2BCB1B60A1047EF4A22 /* [CP] Check Pods Manifest.lock */,
 				0D45A2DC1D3D7C490006051D /* Sources */,
@@ -159,9 +160,9 @@
 			);
 			dependencies = (
 			);
-			name = BattleFoodPorn;
+			name = BattleFoodPics;
 			productName = BattleFoodPorn;
-			productReference = 0D45A2E01D3D7C490006051D /* BattleFoodPorn.app */;
+			productReference = 0D45A2E01D3D7C490006051D /* BattleFoodPics.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -178,7 +179,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0D45A2DB1D3D7C490006051D /* Build configuration list for PBXProject "BattleFoodPorn" */;
+			buildConfigurationList = 0D45A2DB1D3D7C490006051D /* Build configuration list for PBXProject "BattleFoodPics" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -191,7 +192,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0D45A2DF1D3D7C490006051D /* BattleFoodPorn */,
+				0D45A2DF1D3D7C490006051D /* BattleFoodPics */,
 			);
 		};
 /* End PBXProject section */
@@ -387,8 +388,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BattleFoodPorn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.candance.BattleFoodPorn;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.candance.BattleFoodPics;
+				PRODUCT_NAME = BattleFoodPics;
 			};
 			name = Debug;
 		};
@@ -399,15 +400,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BattleFoodPorn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.candance.BattleFoodPorn;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.candance.BattleFoodPics;
+				PRODUCT_NAME = BattleFoodPics;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0D45A2DB1D3D7C490006051D /* Build configuration list for PBXProject "BattleFoodPorn" */ = {
+		0D45A2DB1D3D7C490006051D /* Build configuration list for PBXProject "BattleFoodPics" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0D45A2F51D3D7C490006051D /* Debug */,
@@ -416,7 +417,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0D45A2F71D3D7C490006051D /* Build configuration list for PBXNativeTarget "BattleFoodPorn" */ = {
+		0D45A2F71D3D7C490006051D /* Build configuration list for PBXNativeTarget "BattleFoodPics" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0D45A2F81D3D7C490006051D /* Debug */,
